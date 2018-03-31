@@ -43,7 +43,7 @@ namespace BioIntranet
             }
             else
             {
-                if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].ToUpper() == "FiltrarListado".ToUpper())
+                if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].Equals("FiltrarListado"))
                 {
                     HtmlInputText txtSearch = (HtmlInputText)Master.FindControl("txtSearch");
 

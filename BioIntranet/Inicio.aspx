@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="BioIntranet.Inicio" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleSection" runat="server">  
-    <link rel="stylesheet" href="Content/vallenato.css" type="text/css" media="screen"> 
-
-     <style  type="text/css">  
+     <style  type="text/css">
             .searchInput {
                 background: no-repeat 10px 6px #fcfcfc;
                 border: 1px solid #d1d1d1;
@@ -25,18 +23,19 @@
             .searchInput:focus {
                 width: 200px;
             } 
-        </style>  
+        </style>
 
+        <link rel="stylesheet" href="Content/vallenato.css" type="text/css" media="screen"> 
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
         <link href="Content/css3-buttons.css" rel="stylesheet" />
         <link href="Content/component.css" rel="stylesheet" />
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">  
-      
     <div class="row">
         <div class="col-sm-8"> 
-            &nbsp;&nbsp;&nbsp;
+            &nbsp; &nbsp; &nbsp;
         </div>
         <div class="col-sm-4" style="margin-bottom:10px; float:right;"> 
             <input name="txtSearch" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
@@ -46,7 +45,6 @@
             </button>                   
         </div>
     </div>
-            
     <div class="row">
     <div class="col-sm-3"> 
         <div runat="server" id="accordion_container" style="width:100%"> 
@@ -81,18 +79,14 @@
   </div>
 </div>
 </asp:Content>
-
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptSection" runat="server">  
-    
     <script src="Scripts/vallenato.js" type="text/javascript"></script>  
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
     <script type="text/javascript"> 
         function FiltrarListado() {
             alert("ahhh ahhh ahhh");
             __doPostBack('FiltrarListado', 'FiltrarListado');
         } 
     </script>
-
 </asp:Content>
