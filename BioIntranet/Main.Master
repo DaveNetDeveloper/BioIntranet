@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BioIntranet.Main" %>
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BioIntranet.Main" %>
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,19 +8,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Intranet Coorporativa de Biosystems">
-    <meta name="author" content="Sree">
+    <meta name="author" content="Biosystems">
     
     <%-- Style Section --%>
     <%: Styles.Render("~/bundles/BootstrapCss")  %>
 
-    <asp:ContentPlaceHolder ID="StyleSection" runat="server" /> 
+    <asp:ContentPlaceHolder ID="StyleSection" runat="server">
+       
+        
+    </asp:ContentPlaceHolder>
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
+     <form id="form1" runat="server"> 
     <div>
-        <div class="row">
-            <div class="col-sm-12">  
-                <div class="navbar navbar-default" style="background-color: #e6f2ff;background-image: linear-gradient(to bottom,#e6f2ff 0,#fff 100%);" role="navigation"> 
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+            <div class="col-sm-12" style="padding-right: inherit; padding-left: inherit;" >  
+                <div class="navbar navbar-default" style="margin-bottom: 10px;background-color: #e6f2ff;background-image: linear-gradient(to bottom,#e6f2ff 0,#fff 100%);" role="navigation"> 
                     <div class="container-fluid"> 
                         <div class="navbar-header" style="width: 16.66666667%;">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -63,18 +66,22 @@
                         </div> 
                     </div> 
                 </div> 
-            </div> 
-        </div> 
-        <div class="row">
+            </div>  
+           
+        </div>   
+        <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
             <div class="col-sm-12"> 
                 <asp:ContentPlaceHolder ID="ContentSection" runat="server"></asp:ContentPlaceHolder>
             </div>
         </div>
-    </div>
+    </div> 
 
     <%-- Script Section --%>
     <%: Scripts.Render("~/bundles/jQuery")  %>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+          
     <asp:ContentPlaceHolder ID="ScriptSection" runat="server" />
-    <%--</form>--%>
+    </form> 
 </body>
 </html>
