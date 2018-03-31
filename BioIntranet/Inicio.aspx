@@ -21,7 +21,7 @@
                 } 
              
             .searchInput:focus {
-                width: 200px;
+                width: 225px;
             } 
         </style>
 
@@ -33,21 +33,21 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">  
-    <div class="row">
-        <div class="col-sm-8"> 
-            &nbsp; &nbsp; &nbsp;
-        </div>
-        <div class="col-sm-4" style="margin-bottom:10px; float:right;"> 
-            <input name="txtSearch" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
-            <button runat="server" onclick="javascript:FiltrarListado();" id="btnBuscar" style="float: right;" class="action">
+    <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
+        <div class="col-sm-3" style="margin-bottom:20px; margin-top: 10px;">  
+            <input name="txtSearch" style="float: left; margin-left: 20px;" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
+            <button runat="server" onclick="javascript:FiltrarListado();" id="btnBuscar" style="margin-right: -18px; float: right;" class="action">
                 <span style="margin-left: 20px;height: 16px;" class="label">
                 </span> 
-            </button>                   
+            </button>    
+        </div> 
+        <div class="col-sm-9"> 
+            &nbsp;
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-3"> 
-        <div runat="server" id="accordion_container" style="width:100%"> 
+        <div runat="server" id="accordion_container" style="width:100%; margin-left: 20px;"> 
             <h2 class="accordion-header" style="margin-top:0px">COMITE DE EMPRESA</h2>  
             <div runat="server" style="width:100%" id="ComitedeEmpresaContent" class="accordion-content"></div>  
             
@@ -65,7 +65,7 @@
         </div>   
     </div>
     <div class="col-sm-9"> 
-    <div class="jumbotron">
+    <div class="jumbotron" style="padding: 30px; margin-left: 20px; margin-right: 25px;">
         <h1>Navbar example</h1>
         <p>
             This example is a quick exercise to illustrate how the default, static navbar and
@@ -86,8 +86,8 @@
     <script type="text/javascript"> 
         function FiltrarListado() {
 
-            //alert("ahhh ahhh ahhh");
-            __doPostBack('FiltrarListado', 'FiltrarListado');
+            alert("Do PostBack ?");
+           //__doPostBack('FiltrarListado', 'FiltrarListado');
         } 
     </script>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BioIntranet.Main" %>
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BioIntranet.Main" %>
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +21,8 @@
 <body>
      <form id="form1" runat="server"> 
     <div>
-        <div class="row">
-            <div class="col-sm-12">  
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+            <div class="col-sm-12" style="padding-right: inherit; padding-left: inherit;" >  
                 <div class="navbar navbar-default" style="margin-bottom: 10px;background-color: #e6f2ff;background-image: linear-gradient(to bottom,#e6f2ff 0,#fff 100%);" role="navigation"> 
                     <div class="container-fluid"> 
                         <div class="navbar-header" style="width: 16.66666667%;">
@@ -69,7 +69,7 @@
             </div>  
            
         </div>   
-        <div class="row">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
             <div class="col-sm-12"> 
                 <asp:ContentPlaceHolder ID="ContentSection" runat="server"></asp:ContentPlaceHolder>
             </div>
