@@ -41,6 +41,26 @@ namespace BioIntranet
             { 
                 CargarDepartamentos();
             }
+            else
+            {
+                if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].ToUpper() == "FiltrarListado".ToUpper())
+                {
+                    HtmlInputText txtSearch = (HtmlInputText)Master.FindControl("txtSearch");
+
+                    if (txtSearch.Value.Trim() != string.Empty)
+                    {
+                        //gvCenter.DataSource = CargarDepartamentos(txtSearch.Value);
+                        //gvCenter.DataSource = dtCenter;
+                        //gvCenter.DataBind();
+                    }
+                    else
+                    {
+                        //gvCenter.DataSource = CargarGridView(string.Empty);
+                        //gvCenter.DataSource = dtCenter;
+                        //gvCenter.DataBind();
+                    }
+                }
+            }
         } 
 
         protected void CargarDepartamentos()
@@ -58,6 +78,28 @@ namespace BioIntranet
                         CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
                     }
                 } 
+            }
+            catch (Exception ex)
+            {
+                Session["error"] = ex;
+            }
+        }
+
+        protected void CargarDepartamentos(string filter)
+        {
+            try
+            {
+                //DepartamentoEntity departamentoEntity = new DepartamentoEntity();
+                //for (int idArea = 1; idArea <= 5; idArea++)
+                //{
+                //    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(idArea))
+                //    {
+                //        AreaEntity areaEntity = new AreaEntity();
+                //        areaEntity.ObetenerAreas(departamento.IdArea);
+
+                //        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
+                //    }
+                //}
             }
             catch (Exception ex)
             {
