@@ -40,7 +40,7 @@
         <div class="col-sm-4" style="margin-bottom:10px; float:right;"> 
             <input name="txtSearch" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
             <button runat="server" onclick="javascript:FiltrarListado();" id="btnBuscar" style="float: right;" class="action">
-                <span style="background-image: url(http://up2web.es/EscuelaNauticaSantalo_ContentManager/Images/png/lupa.png);background-repeat: no-repeat;background-size: contain;margin-left: 20px;height: 16px;" class="label">
+                <span style="margin-left: 20px;height: 16px;" class="label">
                 </span> 
             </button>                   
         </div>
@@ -85,7 +85,8 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script type="text/javascript"> 
         function FiltrarListado() {
-            alert("ahhh ahhh ahhh");
+
+            //alert("ahhh ahhh ahhh");
             __doPostBack('FiltrarListado', 'FiltrarListado');
         } 
     </script>
