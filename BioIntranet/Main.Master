@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BioIntranet.Main" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+<!DOCTYPE html>
+<html lang="en">
+<head id="Head1" runat="server">
+    <title>Intranet BioSystems</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Intranet Coorporativa de Biosystems">
+    <meta name="author" content="Sree">
+    
+    <%-- Style Section --%>
+    <%: Styles.Render("~/bundles/BootstrapCss")  %>
+
+    <asp:ContentPlaceHolder ID="StyleSection" runat="server" /> 
+</head>
+<body>
+    <%--<form id="form1" runat="server">--%>
+    <div>
+        <div class="row">
+            <div class="col-sm-12">  
+                <div class="navbar navbar-default" style="background-color: #e6f2ff;background-image: linear-gradient(to bottom,#e6f2ff 0,#fff 100%);" role="navigation"> 
+                    <div class="container-fluid"> 
+                        <div class="navbar-header" style="width: 16.66666667%;">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <img width="50" alt="Logo de Biosystems" src="Images/logoBiosystems.png" />
+                            <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href="#">BioSystems</a>
+                        </div> 
+                        <div class="navbar-collapse collapse"> 
+                            <ul class="nav navbar-nav" style="margin-left: 100px;">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Directorio&nbsp;&nbsp;<span class="caret">
+                                    </span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Contactos</a></li>
+                                        <li><a href="#">Calendarios</a></li>
+                                        <li><a href="#">Documentos</a></li>
+                                        <li><a href="#">Plantillas</a></li>
+                                        <%--<li class="divider"></li> --%>
+                                    </ul>
+                                </li> 
+                                <%--<li class="active"><a href="#">Directorio</a></li>
+                                <li><a href="#">Contactos</a></li>
+                                <li><a href="#">Documentos</a></li>--%>
+                                <li><a href="#">FAQs</a></li>
+                            </ul> 
+                            <ul class="nav navbar-nav navbar-right">   
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">David Gómez Martínez&nbsp;&nbsp;<span class="caret">
+                                    </span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Mi Perfil</a></li> 
+                                        <li><a href="#">Preferencias</a></li>
+                                    </ul>
+                                </li>
+                            </ul> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+        <div class="row">
+            <div class="col-sm-12"> 
+                <asp:ContentPlaceHolder ID="ContentSection" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+
+    <%-- Script Section --%>
+    <%: Scripts.Render("~/bundles/jQuery")  %>
+    <asp:ContentPlaceHolder ID="ScriptSection" runat="server" />
+    <%--</form>--%>
+</body>
+</html>
