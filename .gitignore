@@ -3,3 +3,7 @@ BioIntranet.sln
 .vs/BioIntranet
 .vs/BioIntranet/v15
 .vs/BioIntranet/v15/.suo
+BioIntranet/website.publishproj
+BioIntranet/vwd.webinfo
+BioIntranet/obj/Debug
+BioIntranet/obj
