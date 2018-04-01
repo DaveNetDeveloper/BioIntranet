@@ -10,10 +10,10 @@ namespace BioIntranet
     public class AreaEntity : DbAccess
     {
         //private properties
-        private int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Descripcion { get; set; }
-        private string Responsable { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string Responsable { get; set; }
 
         //private properties
         private DbAccess dbAccess { get; set; }
@@ -40,12 +40,12 @@ namespace BioIntranet
         } 
 
         //public methods
-        public List<AreaEntity> ObetenerAreas()
+        public IEnumerable<AreaEntity> ObetenerAreas()
         {
             AreaEntity areaEntity;
             List<AreaEntity> areasList = new List<AreaEntity>();
              
-            string consultaSql = " SELECT * FROM AREA ORDER BY ID";
+            string consultaSql = " SELECT * FROM AREA ORDER BY ID ";
             MySqlDataReader drAreas = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drAreas); 
              
@@ -66,7 +66,7 @@ namespace BioIntranet
         public AreaEntity ObetenerArea(int idArea)
         {
             AreaEntity areaEntity = null;
-            string consultaSql = String.Format("SELECT * FROM AREA WHERE ID = {0}", idArea);
+            string consultaSql = String.Format(" SELECT * FROM AREA WHERE ID = {0} ", idArea);
             MySqlDataReader drAreas = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drAreas);
 

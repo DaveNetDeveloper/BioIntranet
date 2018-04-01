@@ -10,11 +10,11 @@ namespace BioIntranet
     public class DepartamentoEntity : DbAccess
     {
         //private properties
-        private int Id { get; set; }
-        private string Nombre { get; set; }
-        private string Descripcion { get; set; }
-        private string Responsable { get; set; }
-        private int IdArea { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string Responsable { get; set; }
+        public int IdArea { get; set; }
 
         //private properties
         private DbAccess dbAccess { get; set; }
@@ -47,7 +47,7 @@ namespace BioIntranet
             DepartamentoEntity dptoEntity;
             List<DepartamentoEntity> departamentossList = new List<DepartamentoEntity>();
 
-            string consultaSql = String.Format("SELECT * FROM DEPARTAMENTO WHERE ID = {0} ORDER BY IDAREA", idArea);
+            string consultaSql = String.Format("SELECT * FROM DEPARTAMENTO WHERE IDAREA = {0} ORDER BY ID", idArea);
             MySqlDataReader drDepartamentos = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drDepartamentos); 
              

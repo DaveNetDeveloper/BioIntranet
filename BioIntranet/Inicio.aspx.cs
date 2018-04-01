@@ -41,29 +41,29 @@ namespace BioIntranet
             { 
                 CargarDepartamentos();
             }
-            else
-            {
-                if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].Equals("FiltrarListado"))
-                {
-                    HtmlInputText txtSearch = (HtmlInputText)Master.FindControl("txtSearch");
+            //else
+            //{
+            //    if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].Equals("FiltrarListado"))
+            //    {
+            //        HtmlInputText txtSearch = (HtmlInputText)Master.FindControl("txtSearch");
 
-                    if (txtSearch.Value.Trim() != string.Empty)
-                    {
-                        //gvCenter.DataSource = CargarDepartamentos(txtSearch.Value);
-                        //gvCenter.DataSource = dtCenter;
-                        //gvCenter.DataBind();
-                    }
-                    else
-                    {
-                        //gvCenter.DataSource = CargarGridView(string.Empty);
-                        //gvCenter.DataSource = dtCenter;
-                        //gvCenter.DataBind();
-                    }
-                }
-            }
+            //        if (txtSearch.Value.Trim() != string.Empty)
+            //        {
+            //            //gvCenter.DataSource = CargarDepartamentos(txtSearch.Value);
+            //            //gvCenter.DataSource = dtCenter;
+            //            //gvCenter.DataBind();
+            //        }
+            //        else
+            //        {
+            //            //gvCenter.DataSource = CargarGridView(string.Empty);
+            //            //gvCenter.DataSource = dtCenter;
+            //            //gvCenter.DataBind();
+            //        }
+            //    }
+            //}
         }
 
-        private List<AreaEntity> CargarAreas()
+        private IEnumerable<AreaEntity> CargarAreas()
         {
             try
             {
@@ -83,22 +83,27 @@ namespace BioIntranet
             {
                 DepartamentoEntity departamentoEntity = new DepartamentoEntity();
 
-                List<AreaEntity>  listAreas = CargarAreas();//.Distinct(new AreaEntity().Id);
+                IEnumerable<AreaEntity> listAreas = CargarAreas();//.Distinct(new AreaEntity().Id);
                 foreach (AreaEntity area in listAreas)
                 {
                     foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(area.Id))
                     {
-                        //CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, area.Nombre);
+                        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, area.Nombre);
                     }
                 }
-                 
-                List<AreaEntity> list1 = CargarAreas();
-                IEnumerable<AreaEntity> primerArea = list1.Where(a => a.Id == 1);
-                 
-                ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
-                HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
 
-                h2Pruebas.InnerText = ((AreaEntity)primerArea).Nombre; 
+
+
+
+                
+                //ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
+                //HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
+
+                //IEnumerable<AreaEntity> list1 = CargarAreas();
+                AreaEntity primerArea = CargarAreas().Where(a => a.Id == 1).ElementAt(0);
+                //h2Pruebas.InnerText = primerArea.Nombre;
+
+
 
 
 

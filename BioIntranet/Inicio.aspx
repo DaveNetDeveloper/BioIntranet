@@ -18,8 +18,8 @@
                 -o-transition: all 0.7s ease 0s;
                 transition: all 0.7s ease 0s;
                 height: 29px;
-                } 
-             
+                }
+
             .searchInput:focus {
                 width: 225px;
             } 
@@ -36,7 +36,7 @@
     <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
         <div class="col-sm-3" style="margin-bottom:20px; margin-top: 10px;">  
             <input name="txtSearch" style="float: left; margin-left: 20px;" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
-            <button runat="server" onclick="javascript:FiltrarListado();" id="btnBuscar" style="margin-right: -18px; float: right;" class="action">
+            <button runat="server" id="btnBuscar" style="margin-right: -18px; float: right;" class="action"> <%--onclick="javascript:FiltrarListado();"--%>
                 <span style="margin-left: 20px;height: 16px;" class="label">
                 </span> 
             </button>    
@@ -48,7 +48,7 @@
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-3"> 
 
-        <h2 id="h2Pruebas" runat="server"> pruebas </h2>  
+        <%--<h2 id="h2Pruebas" runat="server"> pruebas </h2> --%> 
 
         <div runat="server" id="accordion_container" style="width:100%; margin-left: 20px;"> 
             <h2 class="accordion-header" style="margin-top:0px">COMITÉ DE EMPRESA</h2>  
@@ -87,10 +87,10 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script type="text/javascript"> 
-        function FiltrarListado() {
+        //function FiltrarListado() {
 
-            alert("Do PostBack ?");
-           //__doPostBack('FiltrarListado', 'FiltrarListado');
-        } 
+        //    //alert("Do PostBack ?");
+        //   //__doPostBack('FiltrarListado', 'FiltrarListado');
+        //} 
     </script>
 </asp:Content>

@@ -45,6 +45,5 @@ C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\bin\System.Web.Http.Cor
 C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\bin\System.Web.Http.WebHost.xml
 C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\bin\System.Web.Optimization.xml
 C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\obj\Debug\BioIntranet.csprojResolveAssemblyReference.cache
-C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\obj\Debug\BioIntranet.csproj.CoreCompileInputs.cache
 C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\obj\Debug\BioIntranet.dll
 C:\Users\David\Desktop\Repositorios\Intranet\BioIntranet\obj\Debug\BioIntranet.pdb
