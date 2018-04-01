@@ -63,7 +63,7 @@ namespace BioIntranet
             return areasList;
         }
 
-        public AreaEntity ObetenerAreas(int idArea)
+        public AreaEntity ObetenerArea(int idArea)
         {
             AreaEntity areaEntity = null;
             string consultaSql = String.Format("SELECT * FROM AREA WHERE ID = {0}", idArea);

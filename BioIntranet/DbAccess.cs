@@ -29,7 +29,7 @@ namespace BioIntranet
 
             connection.Open();
             mySqlDataReader = mc.ExecuteReader();
-            return connection; 
+            return connection;      
          }
     }
 }

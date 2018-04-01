@@ -61,51 +61,76 @@ namespace BioIntranet
                     }
                 }
             }
+        }
+
+        private List<AreaEntity> CargarAreas()
+        {
+            try
+            {
+                AreaEntity areaEntity = new AreaEntity();
+                return areaEntity.ObetenerAreas();
+            }
+            catch (Exception ex)
+            {
+                Session["error"] = ex;
+                return null;
+            }
         } 
 
-        protected void CargarDepartamentos()
+        private void CargarDepartamentos()
         {
             try
-            {  
+            {
                 DepartamentoEntity departamentoEntity = new DepartamentoEntity();
-                for (int idArea = 1; idArea <= 5; idArea++)
+
+                List<AreaEntity>  listAreas = CargarAreas();//.Distinct(new AreaEntity().Id);
+                foreach (AreaEntity area in listAreas)
                 {
-                    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(idArea))
+                    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(area.Id))
                     {
-                        AreaEntity areaEntity = new AreaEntity();
-                        areaEntity.ObetenerAreas(departamento.IdArea);
-
-                        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
+                        //CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, area.Nombre);
                     }
-                } 
+                }
+                 
+                List<AreaEntity> list1 = CargarAreas();
+                IEnumerable<AreaEntity> primerArea = list1.Where(a => a.Id == 1);
+                 
+                ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
+                HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
+
+                h2Pruebas.InnerText = ((AreaEntity)primerArea).Nombre; 
+
+
+
             }
             catch (Exception ex)
             {
                 Session["error"] = ex;
+           
             }
         }
+        
+        //private void CargarDepartamentos(string filter)
+        //{
+        //    try
+        //    {
+        //        //DepartamentoEntity departamentoEntity = new DepartamentoEntity();
+        //        //for (int idArea = 1; idArea <= 5; idArea++)
+        //        //{
+        //        //    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(idArea))
+        //        //    {
+        //        //        AreaEntity areaEntity = new AreaEntity();
+        //        //        areaEntity.ObetenerAreas(departamento.IdArea);
 
-        protected void CargarDepartamentos(string filter)
-        {
-            try
-            {
-                //DepartamentoEntity departamentoEntity = new DepartamentoEntity();
-                //for (int idArea = 1; idArea <= 5; idArea++)
-                //{
-                //    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(idArea))
-                //    {
-                //        AreaEntity areaEntity = new AreaEntity();
-                //        areaEntity.ObetenerAreas(departamento.IdArea);
-
-                //        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
-                //    }
-                //}
-            }
-            catch (Exception ex)
-            {
-                Session["error"] = ex;
-            }
-        }
+        //        //        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
+        //        //    }
+        //        //}
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Session["error"] = ex;
+        //    }
+        //}
          
         private void CrearListaDepartamentosPorArea(Int32 id, string nombre, string descripcion, string responsable, string areaName)
         {

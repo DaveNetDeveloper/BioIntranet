@@ -47,6 +47,9 @@
     </div>
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-3"> 
+
+        <h2 id="h2Pruebas" runat="server"> pruebas </h2>  
+
         <div runat="server" id="accordion_container" style="width:100%; margin-left: 20px;"> 
             <h2 class="accordion-header" style="margin-top:0px">COMITÉ DE EMPRESA</h2>  
             <div runat="server" style="width:100%" id="ComitedeEmpresaContent" class="accordion-content"></div>  
