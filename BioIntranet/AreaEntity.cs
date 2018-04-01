@@ -9,11 +9,11 @@ namespace BioIntranet
 {
     public class AreaEntity : DbAccess
     {
-        //public properties
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public string Responsable { get; set; }
+        //private properties
+        private int Id { get; set; }
+        private string Nombre { get; set; }
+        private string Descripcion { get; set; }
+        private string Responsable { get; set; }
 
         //private properties
         private DbAccess dbAccess { get; set; }
@@ -21,15 +21,20 @@ namespace BioIntranet
         //constructors
         public AreaEntity(int id, string nombre, string descripcion, string responsable)
         {
-            dbAccess = new DbAccess();
+            InicilizarDbAcess();
 
             Id = id;
             Nombre = nombre;
             Descripcion = descripcion;
             Responsable = responsable; 
         }
-
         public AreaEntity()
+        {
+            InicilizarDbAcess();
+        }
+
+        //private methods
+        private void InicilizarDbAcess()
         {
             dbAccess = new DbAccess();
         } 

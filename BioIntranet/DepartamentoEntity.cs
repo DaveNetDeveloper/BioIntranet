@@ -9,12 +9,12 @@ namespace BioIntranet
 {
     public class DepartamentoEntity : DbAccess
     {
-        //public properties
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public string Responsable { get; set; }
-        public int IdArea { get; set; }
+        //private properties
+        private int Id { get; set; }
+        private string Nombre { get; set; }
+        private string Descripcion { get; set; }
+        private string Responsable { get; set; }
+        private int IdArea { get; set; }
 
         //private properties
         private DbAccess dbAccess { get; set; }
@@ -22,7 +22,7 @@ namespace BioIntranet
         //constructors
         public DepartamentoEntity(int id, string nombre, string descripcion, string responsable, int idArea)
         {
-            dbAccess = new DbAccess();
+            InicilizarDbAcess();
 
             Id = id;
             Nombre = nombre;
@@ -30,8 +30,13 @@ namespace BioIntranet
             Responsable = responsable;
             IdArea = idArea;
         }
+                public DepartamentoEntity()
+        {
+            InicilizarDbAcess();
+        }
 
-        public DepartamentoEntity()
+        //private methods
+        private void InicilizarDbAcess()
         {
             dbAccess = new DbAccess();
         } 
