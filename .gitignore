@@ -4,8 +4,13 @@ BioIntranet.sln
 .vs/BioIntranet
 .vs/BioIntranet/v15
 .vs/BioIntranet/v15/.suo
-BioIntranet/obj/Debug
 BioIntranet/obj
+BioIntranet/obj/Debug
+BioIntranet/obj/Debug/BioIntranet.pdb
+BioIntranet/obj/Debug/BioIntranet.dll
 BioIntranet/website.publishproj
 BioIntranet/vwd.webinfo
 BioIntranet/bin
+BioIntranet/bin/BioIntranet.pdb
+BioIntranet/bin/BioIntranet.dll
+BioIntranet/bin/
