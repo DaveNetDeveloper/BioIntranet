@@ -68,15 +68,13 @@
         </div>   
     </div>
     <div class="col-sm-9"> 
-    <div class="jumbotron" style="padding: 30px; margin-left: 20px; margin-right: 25px;">
-        <h1>Navbar example</h1>
+    <div class="jumbotron" style="padding-left: 30px;margin-left: 20px;margin-right: 25px;padding-right: 30px;padding-top: 15px;padding-bottom: 20px;">
+        <h2 style="color: #E74C3C; margin-bottom: 20px;font-weight:bold;">Título de una noticía importante</h2> 
         <p>
-            This example is a quick exercise to illustrate how the default, static navbar and
-            fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts
-            to your viewport and device.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
         </p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="#" role="button">View navbar docs &raquo;</a>
+        <p style="text-align: right;">
+            <a class="btn btn-lg btn-primary" href="#" role="button">Leer más &raquo;</a>
         </p>
     </div> 
   </div>
