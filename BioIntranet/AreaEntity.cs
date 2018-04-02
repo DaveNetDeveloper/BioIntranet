@@ -17,6 +17,7 @@ namespace BioIntranet
 
         //private properties
         private DbAccess dbAccess { get; set; }
+        MySqlDataReader drAreas = null;
 
         //constructors
         public AreaEntity(int id, string nombre, string descripcion, string responsable)
@@ -67,7 +68,6 @@ namespace BioIntranet
         {
             AreaEntity areaEntity = null;
             string consultaSql = String.Format(" SELECT * FROM AREA WHERE ID = {0} ", idArea);
-            MySqlDataReader drAreas = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drAreas);
 
             string areaName = string.Empty;

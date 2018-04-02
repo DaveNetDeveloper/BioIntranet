@@ -33,7 +33,7 @@
                                 <span class="icon-bar"></span>
                             </button>
                             <img width="50" alt="Logo de Biosystems" src="Images/logoBiosystems.png" />
-                            <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href="#">BioSystems</a>
+                            <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href="Inicio.aspx">BioSystems</a>
                         </div> 
                         <div class="navbar-collapse collapse"> 
                             <ul class="nav navbar-nav" style="margin-left: 100px;">
@@ -43,7 +43,7 @@
                                     <ul class="dropdown-menu" role="menu">
                                         <li><a href="#">Contactos</a></li>
                                         <li><a href="#">Calendarios</a></li>
-                                        <li><a href="#">Documentos</a></li>
+                                        <li><a href="DocumentosList.aspx">Documentos</a></li>
                                         <li><a href="#">Plantillas</a></li>
                                         <%--<li class="divider"></li> --%>
                                     </ul>

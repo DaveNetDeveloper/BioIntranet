@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\biointranet.sql" />
+    <Content Include="DocumentosList.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -118,6 +119,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Documentos\ComiteDeEmpresa\CalendarioLaboral2018.pdf" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -129,9 +131,17 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DocumentoEntity.cs" />
     <Compile Include="DepartamentoEntity.cs" />
     <Compile Include="AreaEntity.cs" />
     <Compile Include="DbAccess.cs" />
+    <Compile Include="DocumentosList.aspx.cs">
+      <DependentUpon>DocumentosList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentosList.aspx.designer.cs">
+      <DependentUpon>DocumentosList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,6 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controller\" />
+    <Folder Include="Documentos\InvestigaciónyDesarrollo\" />
+    <Folder Include="Documentos\Marketing\" />
+    <Folder Include="Documentos\Producción\" />
+    <Folder Include="Documentos\RecursosHumanos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

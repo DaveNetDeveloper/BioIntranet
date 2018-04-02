@@ -40,13 +40,13 @@ namespace BioIntranet {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl accordion_container;
         
         /// <summary>
-        /// Control ComitedeEmpresaContent.
+        /// Control ComiteDeEmpresaContent.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ComitedeEmpresaContent;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ComiteDeEmpresaContent;
         
         /// <summary>
         /// Control RecursosHumanosContent.

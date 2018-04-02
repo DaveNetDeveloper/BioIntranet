@@ -92,10 +92,7 @@ namespace BioIntranet
                     }
                 }
 
-
-
-
-                
+                 
                 //ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
                 //HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
 
@@ -103,10 +100,7 @@ namespace BioIntranet
                 AreaEntity primerArea = CargarAreas().Where(a => a.Id == 1).ElementAt(0);
                 //h2Pruebas.InnerText = primerArea.Nombre;
 
-
-
-
-
+                 
             }
             catch (Exception ex)
             {

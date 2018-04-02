@@ -18,6 +18,7 @@ namespace BioIntranet
 
         //private properties
         private DbAccess dbAccess { get; set; }
+        MySqlDataReader drDepartamentos = null;
 
         //constructors
         public DepartamentoEntity(int id, string nombre, string descripcion, string responsable, int idArea)
@@ -48,11 +49,9 @@ namespace BioIntranet
             List<DepartamentoEntity> departamentossList = new List<DepartamentoEntity>();
 
             string consultaSql = String.Format("SELECT * FROM DEPARTAMENTO WHERE IDAREA = {0} ORDER BY ID", idArea);
-            MySqlDataReader drDepartamentos = null;
+            
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drDepartamentos); 
              
-            string areaName = string.Empty;
-
             if (!drDepartamentos.IsClosed)
             {
                 while (drDepartamentos.Read())
