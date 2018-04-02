@@ -52,7 +52,7 @@
 
         <div runat="server" id="accordion_container" style="width:100%; margin-left: 20px;"> 
             <h2 class="accordion-header" style="margin-top:0px">COMITÉ DE EMPRESA</h2>  
-            <div runat="server" style="width:100%" id="ComiteDeEmpresaContent" class="accordion-content"></div>  
+            <div runat="server" style="width:100%" id="ComitéDeEmpresaContent" class="accordion-content"></div>  
             
             <h2 class="accordion-header">RECURSOS HUMANOS</h2> 
             <div id="RecursosHumanosContent" style="width:100%" runat="server" class="accordion-content"></div>  

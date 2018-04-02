@@ -149,11 +149,12 @@ namespace BioIntranet
 
                     HtmlGenericControl aDpto = new HtmlGenericControl("a");
                     aDpto.Attributes.Add("title", nombre);
-                    aDpto.Attributes.Add("id", "aDpto" + id.ToString());
-                    aDpto.Attributes.Add("href", "InicioDpto.aspx?Id=" + id.ToString());
+                    aDpto.Attributes.Add("id", "aDpto" + id.ToString()); 
+                    aDpto.Attributes.Add("href", "DocumentosList.aspx?Id=" + id.ToString()); 
                     aDpto.Attributes.Add("runat", "server");
-                    aDpto.InnerText = descripcion; //+ " - " + nombre;
-                
+                    aDpto.InnerText = descripcion; //+ " - " + nombre; 
+                    //DocumentosList.aspx 
+
                     pTituloDpto.Controls.Add(aDpto);
                     divContent.Controls.Add(pTituloDpto);
                 }
