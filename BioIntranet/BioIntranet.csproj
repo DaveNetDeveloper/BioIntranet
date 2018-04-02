@@ -102,6 +102,14 @@
   <ItemGroup>
     <Content Include="App_Data\biointranet.sql" />
     <Content Include="DocumentosList.aspx" />
+    <Content Include="Images\doc.png" />
+    <Content Include="Images\jpg.png" />
+    <Content Include="Images\pdf.png" />
+    <Content Include="Images\png.png" />
+    <Content Include="Images\ppt.png" />
+    <Content Include="Images\txt.png" />
+    <Content Include="Images\xls.png" />
+    <Content Include="Images\zip.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -120,6 +128,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Documentos\ComiteDeEmpresa\CalendarioLaboral2018.pdf" />
+    <Content Include="Documentos\ComiteDeEmpresa\CalendarioLaboral2017.docx" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -179,6 +188,7 @@
     <Folder Include="Documentos\Marketing\" />
     <Folder Include="Documentos\Producción\" />
     <Folder Include="Documentos\RecursosHumanos\" />
+    <Folder Include="Entities\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

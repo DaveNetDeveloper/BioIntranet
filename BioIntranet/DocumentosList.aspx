@@ -4,91 +4,116 @@
       
       <style type="text/css"> 
             .gridClass th
-            {   background: #024b94;
-                border-right: 2px solid #FFFFFF;
-                color: #ffffff;
-                font-weight: 100;
-                text-transform: uppercase;
-                height: 31px;
-                /*font-size: 14px;*/
-                font-size: 0.75em;font-size: 0.75em;
-            } 
+            {       
+                    background: #5091cd;
+                    border-right: 2px solid #FFFFFF;
+                    color: #ffffff;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    height: 31px;
+                    font-size: 0.9em;
+                    text-align: center;
+                    cursor: pointer;
+            }
+             
+            .gridClass th:hover
+            {       
+                    border-right: 2px solid #FFFFFF;
+                    color: #ffffff; 
+                    text-transform: uppercase;
+                    height: 31px;
+                    font-size: 0.9em;
+                    text-align: center;
+                    font-weight: bold;
+            }
+             
             .gridClass td
             {
                 font-size: 14px;
                 border-right: 2px solid #FFFFFF;
                 font-weight: 100;
-                text-align: center;
-                background-color: white;
+                /*text-align: center;*/
+
+                /*background-color: white; */
                 /* border-left: 2px solid #FFFFFF; */
-                color: #024b94;
-                 opacity: 0.8; 
+                /* color: #024b94;
+                opacity: 0.8; */
             } 
-
-            .imageButtonCentro:hover 
+               
+            .gridClass tr
             {
-                background-image: url('/img/circle.png');
-
+                 height: 40px;
             } 
-            .imageButtonCentro:hover 
+                 
+            .gridClass tr:hover
             {
-                background-image: url('/img/circle.png');
+                /*background-color: #367fc3; 
+                color: white;
+                cursor: pointer;*/ 
+               /* opacity: 0.8; */
+
+                background-image: -webkit-linear-gradient(top,#fff 0,#F5F5DC 100%);
+                background-image: -o-linear-gradient(top,#fff 0,#F5F5DC 100%);
+                background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#F5F5DC));
+                background-image: linear-gradient(to bottom,#fff 0,#F5F5DC 100%);
 
             } 
-            .linkLINKS:hover
-            { 
-                text-decoration: underline;
-                color:white; 
+                 
+            .gridClass td:hover
+            {
+                /*background-color: #367fc3; 
+                /*color: white;*/
+                cursor: pointer; 
             } 
-            .linkLINKS
-            { 
-                color:white;
-            } 
-        </style>
-
+  
+        </style>  
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">   
 
+     
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
 
     <div class="col-sm-12"> 
         
-        <asp:GridView ID="gvDocumentos" runat="server" OnRowCommand="gvDocumentos_RowCommand" DataKeyNames="Id" AutoGenerateColumns="false" CssClass ="gridClass" EmptyDataText="No hay documentos.">
+        <asp:GridView ID="gvDocumentos" Width="100%" runat="server" OnRowDataBound="gvDocumentos_RowDataBound" OnRowCommand="gvDocumentos_RowCommand" DataKeyNames="Id" AutoGenerateColumns="false" CssClass ="gridClass" EmptyDataText="No hay documentos.">
         <Columns> 
-
-            <asp:BoundField DataField="Id" ItemStyle-Width="150px" HeaderText="Id" Visible="false" />
-
-            <asp:BoundField DataField="Nombre" ItemStyle-Width="175px" HeaderText="Nombre" />
-
-            <asp:BoundField DataField="Descripcion" ItemStyle-Width="120px" HeaderText="Descripcion" />
-
-            <asp:BoundField DataField="Ubicacion" ItemStyle-Width="100px" HeaderText="Ubicacion" />
-                            
-            <asp:BoundField DataField="Tamaño" ItemStyle-Width="100px" HeaderText="Tamaño" />
-
-            <asp:BoundField DataField="FechaCreacion" ItemStyle-Width="100px" HeaderText="FechaCreacion" />
              
-            <asp:BoundField DataField="IdSeccion" ItemStyle-Width="100px" HeaderText="IdSeccion" Visible="false" />
-
-            <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-VerticalAlign="Middle" HeaderText="Tipo" ItemStyle-Width="150">
-            <ItemTemplate>
-                    <asp:Label runat="server" ID="lblTipoDocumento" Text='<%# Eval("Tipo")%>'></asp:Label>
-                    <asp:ImageButton CommandName='<%# Eval("Ubicacion")%>' Height="15px" Width="18px" ImageUrl="~/images/ping.png" ID="btnCentro" runat="server" 
-                    CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
+            <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-VerticalAlign="Middle" HeaderText="" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="50px">
+            <ItemTemplate> 
+                    <asp:ImageButton ImageAlign="Middle" CommandName='<%# Eval("Ubicacion") %>' Height="25px" ImageUrl='<%# Eval("Tipo").Equals("pdf") ? "~/Images/pdf.png" : "~/Images/doc.png" %>' ID="btnVerDocumento" 
+                                     runat="server" CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" />
             </ItemTemplate>
             </asp:TemplateField> 
-                            
-           <%-- <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-VerticalAlign="Middle" HeaderText="INFO" ItemStyle-Width="150">
+
+            <asp:BoundField DataField="Tipo" ItemStyle-Width="50px" Visible="false" />
+
+            <asp:BoundField DataField="Id" ItemStyle-Width="50px" HeaderText="Id" Visible="false" />
+
+            <asp:BoundField DataField="Nombre" ItemStyle-Width="200px" ItemStyle-HorizontalAlign="Left" HeaderText="Nombre" />
+
+            <asp:BoundField DataField="Descripcion" ItemStyle-Width="125px" ItemStyle-HorizontalAlign="Left" HeaderText="Descripcion" />
+
+            <asp:BoundField DataField="Ubicacion" ItemStyle-Width="175px" ItemStyle-HorizontalAlign="Left" HeaderText="Ubicacion" /> 
+
+            <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-VerticalAlign="Middle" HeaderText="Tamaño" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="75px">
+            <ItemTemplate>
+                    <asp:Label runat="server" ID="lblTamañoDocumento" Text='<%# Eval("Tamaño") + " Mb" %>'></asp:Label> 
+            </ItemTemplate>
+            </asp:TemplateField>  
+             
+            <asp:BoundField DataField="FechaCreacion" DataFormatString="{0:dd/MM/yyyy}" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="100px" HeaderText="Fecha" />
+             
+            <asp:BoundField DataField="IdSeccion" ItemStyle-Width="50px" HeaderText="IdSeccion" Visible="false" />
+
+            <%-- <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-VerticalAlign="Middle" HeaderText="INFO" ItemStyle-Width="150">
             <ItemTemplate>
                     <asp:ImageButton Width="18px" ImageUrl="~/img/circle.png" ID="btnInfo" runat="server" 
                     CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" CommandName="Info" />
             </ItemTemplate>
             </asp:TemplateField> --%>
-
         </Columns>
-        </asp:GridView>
-         
+        </asp:GridView> 
     </div> 
 </div> 
 </asp:Content>

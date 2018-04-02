@@ -18,12 +18,13 @@ namespace BioIntranet
         public int IdSeccion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public string Tipo { get; set; }
-
+        public string Extension { get; set; }
+         
         //private properties
         private DbAccess dbAccess { get; set; }
 
         //constructors
-        public DocumentoEntity(int id, string nombre, string descripcion, string ubicacion, int tamaño, int idSeccion, DateTime fechaCreacion)
+        public DocumentoEntity(int id, string nombre, string descripcion, string ubicacion, int tamaño, int idSeccion, DateTime fechaCreacion, string tipo)
         {
             InicilizarDbAcess();
 
@@ -34,7 +35,8 @@ namespace BioIntranet
             Tamaño = tamaño;
             IdSeccion = idSeccion;
             FechaCreacion = fechaCreacion;
-            Tipo = VirtualPathUtility.GetExtension(nombre);
+            Extension = VirtualPathUtility.GetExtension(ubicacion);
+            Tipo = tipo;
         }
         public DocumentoEntity()
         {
@@ -48,12 +50,12 @@ namespace BioIntranet
         } 
 
         //public methods
-        public List<DocumentoEntity> ObetenerDocumentos()
+        public IEnumerable<DocumentoEntity> ObetenerDocumentos()
         {
             DocumentoEntity documentoEntity;
             List<DocumentoEntity> documentosList = new List<DocumentoEntity>();
 
-            string consultaSql = "SELECT * FROM DOCUMENTO ORDER BY ID";
+            string consultaSql = "SELECT * FROM DOCUMENTO ORDER BY FechaCreacion DESC ";
             MySqlDataReader drDocumentos = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drDocumentos); 
               
@@ -61,8 +63,7 @@ namespace BioIntranet
             {
                 while (drDocumentos.Read())
                 {
-
-                    documentoEntity = new DocumentoEntity(drDocumentos.GetInt32(0), drDocumentos.GetString(1),(drDocumentos.IsDBNull(3)) ? string.Empty : drDocumentos.GetString(3),  drDocumentos.GetString(2), drDocumentos.GetInt32(4), (drDocumentos.IsDBNull(5)) ? 0 : drDocumentos.GetInt32(5), drDocumentos.GetDateTime(6));
+                    documentoEntity = new DocumentoEntity(drDocumentos.GetInt32(0), drDocumentos.GetString(1), (drDocumentos.IsDBNull(3)) ? string.Empty : drDocumentos.GetString(3), drDocumentos.GetString(2), drDocumentos.GetInt32(4), (drDocumentos.IsDBNull(5)) ? 0 : drDocumentos.GetInt32(5), drDocumentos.GetDateTime(6), drDocumentos.GetString(7));
                     documentosList.Add(documentoEntity); 
                 }
             } 

@@ -51,25 +51,20 @@ namespace BioIntranet
                 IEnumerable<DocumentoEntity> listDocumentos = departamentoEntity.ObetenerDocumentos();
                 foreach (DocumentoEntity doc in listDocumentos)
                 {
-                     
-                         
+                      
                 }
-
-
+                 
                 gvDocumentos.DataSource = listDocumentos;
                 gvDocumentos.DataBind();
-
-
-
+                 
             }
             catch (Exception ex)
             {
-                Session["error"] = ex;
-
+                Session["error"] = ex; 
             }
         }
 
-        void gvDocumentos_RowDataBound(Object sender, GridViewRowEventArgs e)
+        protected void gvDocumentos_RowDataBound(object sender, GridViewRowEventArgs e) 
         { 
             if (e.Row.RowType == DataControlRowType.DataRow)
             { 
@@ -79,28 +74,17 @@ namespace BioIntranet
 
         protected void gvDocumentos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            //if (e.CommandName == "Info")
-            //{
-            //    int rowIndex = int.Parse(e.CommandArgument.ToString());
-            //    string val = this.gvDocumentos.DataKeys[rowIndex]["id"].ToString();
+            //if (e.CommandName == "Ver")
+            //{ 
+            //}
+            //else if (e.CommandName == "Descargar")
+            //{ 
+            //} 
 
-            //    Response.Redirect("~/Documentos/ComiteDeEmpresa/CalendarioLaboral2018.pdf"); // + "?Id=" + val);
-            //}
-            //else
-            //{
-            //    if (e.CommandName == "Puerto")
-            //    {
-            //        Response.Redirect("~/Contacto.aspx" + "?Centro=" + "1");
-            //    }
-            //    else if (e.CommandName == "Escuela")
-            //    {
-            //        Response.Redirect("~/Contacto.aspx" + "?Centro=" + "2");
-            //    }
-            //}
+            int rowIndex = int.Parse(e.CommandArgument.ToString());
+            string idDocumento = this.gvDocumentos.DataKeys[rowIndex]["Id"].ToString();
 
             Response.Redirect(e.CommandName);
-             
-        }
-
+        } 
     } 
 }
