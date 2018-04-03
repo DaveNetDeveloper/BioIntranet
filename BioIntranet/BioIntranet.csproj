@@ -101,7 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\biointranet.sql" />
+    <Content Include="Content\resetBreadCrumbs.css" />
+    <Content Include="Content\styleBreadCrumbs.css" />
     <Content Include="DocumentosList.aspx" />
+    <Content Include="Images\cd-custom-separator.svg" />
     <Content Include="Images\doc.png" />
     <Content Include="Images\jpg.png" />
     <Content Include="Images\pdf.png" />
@@ -136,6 +139,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\modernizr.js" />
     <Content Include="Scripts\vallenato.js" />
     <Content Include="Web.config" />
   </ItemGroup>

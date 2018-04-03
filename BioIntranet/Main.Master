@@ -32,8 +32,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <img width="50" alt="Logo de Biosystems" src="Images/logoBiosystems.png" />
-                            <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href="Inicio.aspx">BioSystems</a>
+                            <a href="Inicio.aspx"> <img  width="150" alt="Logo de Biosystems" src="Images/logo.png" /></a>
+                           <%-- <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href ="Inicio.aspx">BioSystems</a>--%>
                         </div> 
                         <div class="navbar-collapse collapse"> 
                             <ul class="nav navbar-nav" style="margin-left: 100px;">

@@ -16,6 +16,8 @@
                 font-size: 0.9em;
                 cursor: pointer;
                 border: none; 
+
+                
         }
         .gridClass th:hover
         {       
@@ -31,18 +33,14 @@
         {
             font-size: 14px;
             border: none;
-            font-weight: 100;
-            /*text-align: center;*/
-
-            /*background-color: white; */
-            /* border-left: 2px solid #FFFFFF; */
-            /* color: #024b94;
-            opacity: 0.8; */
+            font-weight: 100; 
+             border-left: 2px solid #FFFFFF;    
         } 
         .gridClass tr
         {
                 height: 40px;
                 border: none;
+                border: 1px solid #D8D8D8 !important;
         } 
         .gridClass tr:hover
         {
@@ -51,10 +49,10 @@
             cursor: pointer;*/ 
             /* opacity: 0.8; */
 
-            background-image: -webkit-linear-gradient(top,#fff 0,#F5F5DC 100%);
-            background-image: -o-linear-gradient(top,#fff 0,#F5F5DC 100%);
-            background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#F5F5DC));
-            background-image: linear-gradient(to bottom,#fff 0,#F5F5DC 100%);
+            background-image: -webkit-linear-gradient(top,#fff 0,#F2F2F2  100%);
+            background-image: -o-linear-gradient(top,#fff 0,#F2F2F2  100%);
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#F2F2F2 ));
+            background-image: linear-gradient(to bottom,#fff 0,#F2F2F2  100%);
 
         } 
         .gridClass td:hover
@@ -81,9 +79,28 @@
         } 
 
     </style>  
+
+      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="Content/resetBreadCrumbs.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="Content/styleBreadCrumbs.css"> <!-- Resource style -->
+	<script src="Scripts/modernizr.js"></script> <!-- Modernizr -->
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">   
-    <br><br> 
+    <br> 
+     <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
+         
+          <div class="col-sm-12" >   
+	            <nav>
+		        <ol class="cd-breadcrumb custom-separator">
+			        <li><a href="Inicio.aspx">Inicio</a></li>
+			        <li><a href="#0">Comité de Empresa</a></li>
+			        <li class="current"><a href="#0">Documentos</a></li> 
+		        </ol>
+	        </nav> 
+        </div>  
+    </div>
+      <br> 
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-12"> 
         <asp:GridView ID="gvDocumentos" Width="100%" runat="server" OnRowDataBound="gvDocumentos_RowDataBound" OnRowCommand="gvDocumentos_RowCommand" DataKeyNames="Id" AutoGenerateColumns="false" CssClass ="gridClass" EmptyDataText="No hay documentos.">
@@ -107,7 +124,7 @@
 
             <asp:BoundField DataField="Descripcion" HeaderStyle-HorizontalAlign="Left" ItemStyle-Width="150px" ItemStyle-HorizontalAlign="Center" HeaderText="Descripcion" />
 
-            <asp:BoundField DataField="Ubicacion" HeaderStyle-HorizontalAlign="Left" ItemStyle-Width="175px" ItemStyle-HorizontalAlign="Left" HeaderText="Ubicacion" /> 
+            <asp:BoundField DataField="Ubicacion" Visible="false" HeaderStyle-HorizontalAlign="Left" ItemStyle-Width="175px" ItemStyle-HorizontalAlign="Left" HeaderText="Ubicacion" /> 
              
             <asp:TemplateField ItemStyle-VerticalAlign="Middle" HeaderStyle-HorizontalAlign="Center" HeaderStyle-VerticalAlign="Middle" HeaderText="Tamaño" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="100px">
             <ItemTemplate>

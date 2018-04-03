@@ -30,21 +30,41 @@
         <link href="Content/css3-buttons.css" rel="stylesheet" />
         <link href="Content/component.css" rel="stylesheet" />
 
+
+  
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">  
-    <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
-        <div class="col-sm-3" style="margin-bottom:20px; margin-top: 10px;">  
-            <input name="txtSearch" style="float: left; margin-left: 20px;" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
-            <button runat="server" id="btnBuscar" style="margin-right: -18px; float: right;" class="action"> <%--onclick="javascript:FiltrarListado();"--%>
-                <span style="margin-left: 20px;height: 16px;" class="label">
-                </span> 
-            </button>    
+    
+     <br> 
+
+    <div class="row" style="margin-right: 0px; margin-left: 20px;"> 
+         
+         <%-- <div class="col-sm-6">  
+	            <nav>
+		        <ol class="cd-breadcrumb custom-separator">
+			        <li><a href="#0">Inicio</a></li>
+			        <li><a href="#0">Comité de Empresa</a></li>
+			        <li class="current"><a href="#0">Documentos</a></li> 
+		        </ol>
+	        </nav> 
         </div> 
-        <div class="col-sm-9"> 
-            &nbsp;
-        </div>
+         --%>
+        <div class="col-sm-6"> 
+                <input name="txtSearch" style="float: left" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
+                  &nbsp; &nbsp; &nbsp;
+                <button runat="server" id="btnBuscar" style="margin-left: 10px; float: left;" class="action"> <%--onclick="javascript:FiltrarListado();"--%>
+                    <span style="margin-left: 20px;height: 16px;" class="label">
+                    </span> 
+                </button>    
+        </div>  
+  
+         
     </div>
+     
+    <br> 
+
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-3"> 
 
@@ -65,11 +85,14 @@
             
             <h2 class="accordion-header">PRODUCCIÓN</h2> 
             <div id="ProducciónContent" style="width:100%" runat="server" class="accordion-content"></div> 
+
+           <br> 
+
         </div>   
     </div>
     <div class="col-sm-9"> 
-    <div class="jumbotron" style="padding-left: 30px;margin-left: 20px;margin-right: 25px;padding-right: 30px;padding-top: 15px;padding-bottom: 20px;">
-        <h2 style="color: #E74C3C; margin-bottom: 20px;font-weight:bold;">Título de una noticía importante</h2> 
+    <div class="jumbotron" style="padding-left: 30px;margin-left: 20px;margin-right: 25px;padding-right: 30px;padding-top: 15px;padding-bottom: 20px;border: 1px solid #D8D8D8 !important;    background: #F2F2F2;    background: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1);    background: -moz-linear-gradient(top, #F5F5F5, #F1F1F1);   background: -ms-linear-gradient(top, #F5F5F5, #F1F1F1);    background: -o-linear-gradient(top, #F5F5F5, #F1F1F1);    -webkit-transition: border .20s;    -moz-transition: border .20s;    -o-transition: border .20s;    transition: border .20s;">
+        <h2 style="color: #E74C3C; margin-bottom: 20px;font-weight:bold;">Título de una noticía</h2> 
         <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
         </p>
