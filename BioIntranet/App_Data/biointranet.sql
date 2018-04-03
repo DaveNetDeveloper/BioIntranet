@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-03-2018 a las 01:23:02
+-- Tiempo de generación: 03-04-2018 a las 14:15:23
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `biointranet`
 --
+CREATE DATABASE IF NOT EXISTS `biointranet` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `biointranet`;
 
 -- --------------------------------------------------------
 
@@ -38,7 +40,7 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`Id`, `Nombre`, `Descripción`, `Responsable`) VALUES
-(1, 'Comité de Empresa', NULL, 'jrosset@biosystems.es'),
+(1, 'Comité De Empresa', NULL, 'jrosset@biosystems.es'),
 (2, 'Recursos Humanos', NULL, 'rcontreras@biosystems.es'),
 (3, 'Investigación y Desarrollo', NULL, 'jesplugues@biosystems.es'),
 (4, 'Marketing', NULL, 'unknown@biosystems.es'),
@@ -79,7 +81,12 @@ CREATE TABLE `departamento` (
 
 INSERT INTO `departamento` (`Id`, `Nombre`, `Descripción`, `Responsable`, `IdArea`) VALUES
 (1, 'Personal', 'Departamento de personal', 'rcontreras@biosystems.es', 2),
-(2, 'Administración', 'Departamento de administración', 'mcuixart@biosystems.es', 2);
+(2, 'Administración', 'Departamento de administración', 'mcuixart@biosystems.es', 2),
+(4, 'Electrónica', 'Departamento de Electrónica', 'rpalazon@biosystems.es', 3),
+(5, 'Física', 'Departamento de Física', 'stortosa@biosystems.es', 3),
+(8, 'Mecánica', 'Departamento de Mecánica', 'fgrau@biosystems.es', 3),
+(9, 'Software', 'Departamento de Software', 'mibanez@biosystems.es', 3),
+(10, 'Documentos comité', 'Documentos comité', 'jrosset@niosystems.es', 1);
 
 -- --------------------------------------------------------
 
@@ -94,8 +101,19 @@ CREATE TABLE `documento` (
   `Descripcion` text,
   `Tamaño` bigint(20) DEFAULT NULL,
   `IdSeccion` int(11) DEFAULT NULL,
-  `FechaCreacion` datetime DEFAULT NULL
+  `FechaCreacion` datetime DEFAULT NULL,
+  `Tipo` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `documento`
+--
+
+INSERT INTO `documento` (`Id`, `Nombre`, `Ubicacion`, `Descripcion`, `Tamaño`, `IdSeccion`, `FechaCreacion`, `Tipo`) VALUES
+(1, 'Calendario laboral 2018', 'Documentos/ComiteDeEmpresa/CalendarioLaboral2018.pdf', '...', 100, NULL, '2018-04-02 00:00:00', 'pdf'),
+(2, 'Calendario laboral 2017', 'Documentos/ComiteDeEmpresa/CalendarioLaboral2017.pdf', '...', 90, NULL, '2017-04-02 00:00:00', 'pdf'),
+(3, 'Acta reunión 10 de marzo de 2018', 'Documentos/ComiteDeEmpresa/ActaReunion10032018.docx', '...', 90, NULL, '2017-04-02 00:00:00', 'doc'),
+(4, 'Acta reunión 15 de marzo de 2018', 'Documentos/ComiteDeEmpresa/ActaReunion15032018.docx', '...', 90, NULL, '2017-04-02 00:00:00', 'doc');
 
 -- --------------------------------------------------------
 
@@ -205,12 +223,12 @@ ALTER TABLE `aviso`
 -- AUTO_INCREMENT de la tabla `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `documento`
 --
 ALTER TABLE `documento`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `imagen`
 --
