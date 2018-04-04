@@ -41,26 +41,6 @@ namespace BioIntranet
             { 
                 CargarDepartamentos();
             }
-            //else
-            //{
-            //    if (Request["__EVENTTARGET"] != null && Request["__EVENTTARGET"].Equals("FiltrarListado"))
-            //    {
-            //        HtmlInputText txtSearch = (HtmlInputText)Master.FindControl("txtSearch");
-
-            //        if (txtSearch.Value.Trim() != string.Empty)
-            //        {
-            //            //gvCenter.DataSource = CargarDepartamentos(txtSearch.Value);
-            //            //gvCenter.DataSource = dtCenter;
-            //            //gvCenter.DataBind();
-            //        }
-            //        else
-            //        {
-            //            //gvCenter.DataSource = CargarGridView(string.Empty);
-            //            //gvCenter.DataSource = dtCenter;
-            //            //gvCenter.DataBind();
-            //        }
-            //    }
-            //}
         }
 
         private IEnumerable<AreaEntity> CargarAreas()
@@ -92,7 +72,8 @@ namespace BioIntranet
                     }
                 }
 
-                 
+
+                //Pruebas -> NO BORRAR
                 //ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
                 //HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
 
@@ -109,28 +90,6 @@ namespace BioIntranet
             }
         }
         
-        //private void CargarDepartamentos(string filter)
-        //{
-        //    try
-        //    {
-        //        //DepartamentoEntity departamentoEntity = new DepartamentoEntity();
-        //        //for (int idArea = 1; idArea <= 5; idArea++)
-        //        //{
-        //        //    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(idArea))
-        //        //    {
-        //        //        AreaEntity areaEntity = new AreaEntity();
-        //        //        areaEntity.ObetenerAreas(departamento.IdArea);
-
-        //        //        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, areaEntity.Nombre);
-        //        //    }
-        //        //}
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Session["error"] = ex;
-        //    }
-        //}
-         
         private void CrearListaDepartamentosPorArea(Int32 id, string nombre, string descripcion, string responsable, string areaName)
         {
             try
@@ -153,7 +112,6 @@ namespace BioIntranet
                     aDpto.Attributes.Add("href", "DocumentosList.aspx?Id=" + id.ToString()); 
                     aDpto.Attributes.Add("runat", "server");
                     aDpto.InnerText = descripcion; //+ " - " + nombre; 
-                    //DocumentosList.aspx 
 
                     pTituloDpto.Controls.Add(aDpto);
                     divContent.Controls.Add(pTituloDpto);

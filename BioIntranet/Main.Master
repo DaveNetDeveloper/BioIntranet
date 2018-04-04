@@ -10,11 +10,9 @@
     <meta name="description" content="Intranet Coorporativa de Biosystems">
     <meta name="author" content="Biosystems">
     
-    <%-- Style Section --%>
     <%: Styles.Render("~/bundles/BootstrapCss")  %>
 
     <asp:ContentPlaceHolder ID="StyleSection" runat="server">
-       
         
     </asp:ContentPlaceHolder>
 </head>
@@ -26,13 +24,23 @@
                 <div class="navbar navbar-default" style="margin-bottom: 10px;background-color: #e6f2ff;background-image: linear-gradient(to bottom,#e6f2ff 0,#fff 100%);" role="navigation"> 
                     <div class="container-fluid"> 
                         <div class="navbar-header" style="width: 16.66666667%;">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a href="Inicio.aspx"> <img  width="150" alt="Logo de Biosystems" src="Images/logo.png" /></a>
+                            
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="Inicio.aspx"> <img  width="150" alt="Logo de Biosystems" src="Images/logo.png" /></a>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </td>
+                                </tr> 
+                            </table>
+                             
                            <%-- <a class="navbar-brand" style="float: right; color:#ff0000; font-weight:bold; margin-right: 45px;" href ="Inicio.aspx">BioSystems</a>--%>
                         </div> 
                         <div class="navbar-collapse collapse"> 

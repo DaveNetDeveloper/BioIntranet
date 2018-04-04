@@ -35,10 +35,10 @@
 }
 
 .active-header:hover {
-	background: url(/images/active-header.gif) #f5f5f5;
-	background-repeat: no-repeat;
-	background-position: right 50%;
-    color: #024b94;
+    background: url(/images/active-header.gif) #024b94;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    color: white;
 }
 
 .inactive-header {
@@ -49,19 +49,29 @@
 }
 
 .inactive-header:hover {
-	background: url(images/inactive-header.gif) #f5f5f5;
-	background-repeat: no-repeat;
-	background-position: right 50%;
-    color: #024b94;
+    background: url(/images/active-header.gif) #024b94;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    color: white;
 }
 
 .accordion-content {
 	display: none;
 	padding: 20px;
-	background: #ffffff;
+	/*background: #ffffff;*/
 	border: 1px solid #cccccc;
 	border-top: 0;
 	-moz-border-radius: 0 0 5px 5px;
 	-webkit-border-radius: 0 0 5px 5px;
 	border-radius: 0 0 5px 5px;
+
+    background: -webkit-linear-gradient(top, #F5F5F5, ghostwhite);
+    background: -moz-linear-gradient(top, #F5F5F5, ghostwhite);
+    background: -ms-linear-gradient(top, #F5F5F5, ghostwhite);
+    background: -o-linear-gradient(top, #F5F5F5, ghostwhite);
+    
+    -webkit-transition: border .20s;
+    -moz-transition: border .20s;
+    -o-transition: border .20s;
+    transition: border .20s;
 }

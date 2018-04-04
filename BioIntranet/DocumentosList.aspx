@@ -76,7 +76,7 @@
         { 
             color:#337ab7;
         } 
-
+        
         a:hover 
         {
             text-decoration: none;
@@ -124,6 +124,18 @@
                 <p class="cat" runat="server" id="p12" width="auto">
                     <span></span>
                     <a title="Servicios de empresa" id="aDpto12" href="#" runat="server">Servicios de empresa</a>
+                </p>
+                <p class="cat" runat="server" id="p13" width="auto">
+                    <span></span>
+                    <a title="Otra sección" id="a113" href="#" runat="server">Otra sección</a>
+                </p>
+                <p class="cat" runat="server" id="p14" width="auto">
+                    <span></span>
+                    <a title="Otra sección más" id="a14" href="#" runat="server">Otra sección más</a>
+                </p>
+                <p class="cat" runat="server" id="p16" width="auto">
+                    <span></span>
+                    <a title="Última sección" id="a16" href="#" runat="server">Última sección</a>
                 </p>
             </div>  
         </div>     

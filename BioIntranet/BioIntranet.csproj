@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -146,9 +147,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="DocumentoEntity.cs" />
-    <Compile Include="DepartamentoEntity.cs" />
-    <Compile Include="AreaEntity.cs" />
+    <Compile Include="Entities\DocumentoEntity.cs" />
+    <Compile Include="Entities\DepartamentoEntity.cs" />
+    <Compile Include="Entities\AreaEntity.cs" />
     <Compile Include="DbAccess.cs" />
     <Compile Include="DocumentosList.aspx.cs">
       <DependentUpon>DocumentosList.aspx</DependentUpon>
@@ -194,7 +195,6 @@
     <Folder Include="Documentos\Marketing\" />
     <Folder Include="Documentos\Producción\" />
     <Folder Include="Documentos\RecursosHumanos\" />
-    <Folder Include="Entities\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -19,11 +19,9 @@
             transition: all 0.7s ease 0s;
             height: 29px;
             }
-
         .searchInput:focus {
             width: 225px;
         } 
-
         a:hover 
         {
             text-decoration: none;

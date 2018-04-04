@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
-using System.Data; 
+using System.Data;
 
 namespace BioIntranet
 {
@@ -17,7 +17,7 @@ namespace BioIntranet
 
         //private properties
         private DbAccess dbAccess { get; set; }
-        MySqlDataReader drAreas = null;
+        MySqlDataReader drAreas;
 
         //constructors
         public AreaEntity(int id, string nombre, string descripcion, string responsable)
@@ -43,11 +43,9 @@ namespace BioIntranet
         //public methods
         public IEnumerable<AreaEntity> ObetenerAreas()
         {
-            AreaEntity areaEntity;
             List<AreaEntity> areasList = new List<AreaEntity>();
              
             string consultaSql = " SELECT * FROM AREA ORDER BY ID ";
-            MySqlDataReader drAreas = null;
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drAreas); 
              
             string areaName = string.Empty; 
@@ -56,7 +54,7 @@ namespace BioIntranet
             {
                 while (drAreas.Read())
                 {
-                    areaEntity = new AreaEntity(drAreas.GetInt32(0), drAreas.GetString(1), (drAreas.IsDBNull(2)) ? string.Empty : drAreas.GetString(2), drAreas.GetString(3));
+                    AreaEntity areaEntity = new AreaEntity(drAreas.GetInt32(0), drAreas.GetString(1), (drAreas.IsDBNull(2)) ? string.Empty : drAreas.GetString(2), drAreas.GetString(3));
                     areasList.Add(areaEntity); 
                 }
             } 
@@ -70,8 +68,6 @@ namespace BioIntranet
             string consultaSql = String.Format(" SELECT * FROM AREA WHERE ID = {0} ", idArea);
             MySqlConnection mySqlConnection = dbAccess.ExecuteDataReader(consultaSql, ref drAreas);
 
-            string areaName = string.Empty;
-
             if (!drAreas.IsClosed)
             {
                 while (drAreas.Read())
@@ -81,11 +77,11 @@ namespace BioIntranet
             }
             mySqlConnection.Close();
 
+            if (null == areaEntity) return null;
             Id = areaEntity.Id;
             Nombre = areaEntity.Nombre;
             Descripcion = areaEntity.Descripcion;
-            Responsable = areaEntity.Responsable; 
-
+            Responsable = areaEntity.Responsable;
             return areaEntity;
         } 
     }
