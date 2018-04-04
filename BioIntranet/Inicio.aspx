@@ -1,56 +1,46 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Inicio.aspx.cs" Inherits="BioIntranet.Inicio" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="StyleSection" runat="server">  
-     <style  type="text/css">
-            .searchInput {
-                background: no-repeat 10px 6px #fcfcfc;
-                border: 1px solid #d1d1d1;
-                font: bold 12px Arial,Helvetica,Sans-serif;
-                color: #bebebe;
-                width: 150px;
-                padding: 6px 15px 6px 15px;
-                text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-                -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-                -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
-                -webkit-transition: all 0.7s ease 0s;
-                -moz-transition: all 0.7s ease 0s;
-                -o-transition: all 0.7s ease 0s;
-                transition: all 0.7s ease 0s;
-                height: 29px;
-                }
+    <style  type="text/css">
+        .searchInput {
+            background: no-repeat 10px 6px #fcfcfc;
+            border: 1px solid #d1d1d1;
+            font: bold 12px Arial,Helvetica,Sans-serif;
+            color: #bebebe;
+            width: 150px;
+            padding: 6px 15px 6px 15px;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+            -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+            -webkit-transition: all 0.7s ease 0s;
+            -moz-transition: all 0.7s ease 0s;
+            -o-transition: all 0.7s ease 0s;
+            transition: all 0.7s ease 0s;
+            height: 29px;
+            }
 
-            .searchInput:focus {
-                width: 225px;
-            } 
-        </style>
+        .searchInput:focus {
+            width: 225px;
+        } 
 
-        <link rel="stylesheet" href="Content/vallenato.css" type="text/css" media="screen"> 
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
-        <link href="Content/css3-buttons.css" rel="stylesheet" />
-        <link href="Content/component.css" rel="stylesheet" />
+        a:hover 
+        {
+            text-decoration: none;
+        }
+    </style>
 
-
-  
-
+    <link rel="stylesheet" href="Content/vallenato.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
+    <link href="Content/css3-buttons.css" rel="stylesheet" />
+    <link href="Content/component.css" rel="stylesheet" />
+     
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">  
     
-     <br> 
-
+    <br> 
     <div class="row" style="margin-right: 0px; margin-left: 20px;"> 
-         
-         <%-- <div class="col-sm-6">  
-	            <nav>
-		        <ol class="cd-breadcrumb custom-separator">
-			        <li><a href="#0">Inicio</a></li>
-			        <li><a href="#0">Comité de Empresa</a></li>
-			        <li class="current"><a href="#0">Documentos</a></li> 
-		        </ol>
-	        </nav> 
-        </div> 
-         --%>
         <div class="col-sm-6"> 
                 <input name="txtSearch" style="float: left" runat="server" id="txtSearch" class="searchInput" value="" type="text" size="40" placeholder="..." />
                   &nbsp; &nbsp; &nbsp;
@@ -59,10 +49,8 @@
                     </span> 
                 </button>    
         </div>  
-  
-         
     </div>
-     
+  
     <br> 
 
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
@@ -77,7 +65,7 @@
             <h2 class="accordion-header">RECURSOS HUMANOS</h2> 
             <div id="RecursosHumanosContent" style="width:100%" runat="server" class="accordion-content"></div>  
             
-            <h2 class="accordion-header">INVESTIGACIÓN + DESARROLLO</h2>  
+            <h2 class="accordion-header">INVESTIGACIÓN y DESARROLLO</h2>  
             <div id="InvestigaciónyDesarrolloContent" style="width:100%" runat="server" class="accordion-content"></div>
             
             <h2 class="accordion-header">MÁRKETING</h2> 

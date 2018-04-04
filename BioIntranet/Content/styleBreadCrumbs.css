@@ -74,15 +74,15 @@ Basic Style
   font-size: 1.4rem;
   color: #2c3f4c;
 }
-.cd-breadcrumb li.current > *, .cd-multi-steps li.current > * {
-  /* selected step */
-  color: lightblue;
-  text-decoration:none;
-}
+    .cd-breadcrumb li.current > *, .cd-multi-steps li.current > * {
+        /* selected step */
+        color: #337ab7;
+        text-decoration: none;
+    }
 .no-touch .cd-breadcrumb a:hover, .no-touch .cd-multi-steps a:hover {
-  /* steps already visited */
-  color: lightblue;
-  text-decoration:none;
+    /* steps already visited */
+    color: #337ab7;
+    text-decoration: none;
 }
 .cd-breadcrumb.custom-separator li::after, .cd-multi-steps.custom-separator li::after {
   /* replace the default arrow separator with a custom icon */

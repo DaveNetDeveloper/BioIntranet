@@ -69,43 +69,70 @@
             background-image: -webkit-gradient(linear,left top,left bottom,from(#F5F5DC),to(#ffffff));
             background-image: linear-gradient(to bottom,#F5F5DC 0,#ffffff 100%); 
             background-repeat: repeat-x; 
-            border-color: #245580;
+            border-color: darkgray;
 
         } 
-
         .buttondisable:hover
         { 
             color:#337ab7;
         } 
 
+        a:hover 
+        {
+            text-decoration: none;
+        }
     </style>  
+    
+    <link rel="stylesheet" href="Content/vallenato.css" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> 
+    <link href="Content/css3-buttons.css" rel="stylesheet" />
+    <link href="Content/component.css" rel="stylesheet" />
 
-      <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="Content/resetBreadCrumbs.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="Content/styleBreadCrumbs.css"> <!-- Resource style -->
 	<script src="Scripts/modernizr.js"></script> <!-- Modernizr -->
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">   
-    <br> 
-     <div class="row" style="margin-right: 0px; margin-left: 0px;"> 
-         
-          <div class="col-sm-12" >   
-	            <nav>
-		        <ol class="cd-breadcrumb custom-separator">
-			        <li><a href="Inicio.aspx">Inicio</a></li>
-			        <li><a href="#0">Comité de Empresa</a></li>
-			        <li class="current"><a href="#0">Documentos</a></li> 
-		        </ol>
-	        </nav> 
-        </div>  
-    </div>
-      <br> 
-    <div class="row" style="margin-right: 0px; margin-left: 0px;">
-    <div class="col-sm-12"> 
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server" >   
+<br> 
+<div class="row" style="margin-right: 0px; margin-left: 20px;">  
+        <div class="col-sm-12" >   
+	        <nav>
+		    <ol class="cd-breadcrumb custom-separator">
+			    <li><a href="Inicio.aspx">Inicio</a></li>
+			    <li><a href="#">Comité de Empresa</a></li>
+			    <li class="current"><a href="#">Documentos</a></li> 
+		    </ol>
+	    </nav> 
+    </div>  
+</div>
+<br> 
+<div class="row" style="margin-right: 0px; margin-left: 20px;">
+    <div class="col-sm-3">
+        <div runat="server" id="accordion_container" style="margin-bottom: 30px; width:100%;"> 
+            <h2 class="accordion-header active-header" style="margin-top:0px">COMITÉ DE EMPRESA</h2>  
+            <div id="ContentSection_ComitéDeEmpresaContent" style="width: 100%; display: block;" class="accordion-content open-content">
+                <p class="cat" runat="server" id="p10" width="auto">
+                    <span></span>
+                    <a title="Documentos" id="aDpto10" href="DocumentosList.aspx" runat="server">Documentos</a>
+                </p>
+                <p class="cat" runat="server" id="p11" width="auto">
+                    <span></span>
+                    <a title="Actas de reuniones" id="aDpto11" href="#" runat="server">Actas de reuniones</a>
+                </p>
+                <p class="cat" runat="server" id="p12" width="auto">
+                    <span></span>
+                    <a title="Servicios de empresa" id="aDpto12" href="#" runat="server">Servicios de empresa</a>
+                </p>
+            </div>  
+        </div>     
+    </div> 
+
+    <div class="col-sm-9"> 
         <asp:GridView ID="gvDocumentos" Width="100%" runat="server" OnRowDataBound="gvDocumentos_RowDataBound" OnRowCommand="gvDocumentos_RowCommand" DataKeyNames="Id" AutoGenerateColumns="false" CssClass ="gridClass" EmptyDataText="No hay documentos.">
         <Columns> 
-              <asp:TemplateField>
+             <asp:TemplateField>
                 <HeaderStyle HorizontalAlign="Center" Width="50px" />
                 <ItemStyle HorizontalAlign="Center" Width="50px" />
                 <HeaderTemplate> 
