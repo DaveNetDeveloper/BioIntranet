@@ -36,7 +36,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentSection" runat="server">  
-    
     <br> 
     <div class="row" style="margin-right: 0px; margin-left: 20px;"> 
         <div class="col-sm-6"> 
@@ -48,15 +47,13 @@
                 </button>    
         </div>  
     </div>
-  
     <br> 
-
     <div class="row" style="margin-right: 0px; margin-left: 0px;">
     <div class="col-sm-3"> 
 
         <%--<h2 id="h2Pruebas" runat="server"> pruebas </h2> --%> 
 
-        <div runat="server" id="accordion_container" style="width:100%; margin-left: 20px;"> 
+        <div runat="server" id="accordion_container" style="width:95%; margin-left: 20px;"> 
             <h2 class="accordion-header" style="margin-top:0px">COMITÉ DE EMPRESA</h2>  
             <div runat="server" style="width:100%" id="ComitéDeEmpresaContent" class="accordion-content"></div>  
             
@@ -76,8 +73,9 @@
 
         </div>   
     </div>
+
     <div class="col-sm-9"> 
-    <div class="jumbotron" style="padding-left: 30px;margin-left: 20px;margin-right: 25px;padding-right: 30px;padding-top: 15px;padding-bottom: 20px;border: 1px solid #D8D8D8 !important;    background: #F2F2F2;    background: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1);    background: -moz-linear-gradient(top, #F5F5F5, #F1F1F1);   background: -ms-linear-gradient(top, #F5F5F5, #F1F1F1);    background: -o-linear-gradient(top, #F5F5F5, #F1F1F1);    -webkit-transition: border .20s;    -moz-transition: border .20s;    -o-transition: border .20s;    transition: border .20s;">
+    <div class="jumbotron" style="width:95%; margin-left: 20px;padding-left: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 20px; border: 1px solid #D8D8D8 !important;    background: #F2F2F2;    background: -webkit-linear-gradient(top, #F5F5F5, #F1F1F1); background: -moz-linear-gradient(top, #F5F5F5, #F1F1F1); background: -ms-linear-gradient(top, #F5F5F5, #F1F1F1);    background: -o-linear-gradient(top, #F5F5F5, #F1F1F1);    -webkit-transition: border .20s;    -moz-transition: border .20s;    -o-transition: border .20s;    transition: border .20s;">
         <h2 style="color: #E74C3C; margin-bottom: 20px;font-weight:bold;">Título de una noticía</h2> 
         <p>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 

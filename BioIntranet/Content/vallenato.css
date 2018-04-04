@@ -25,35 +25,39 @@
 }
 
 .active-header {
-	-moz-border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-	border-radius: 5px 5px 0 0;
-	background: url(/images/active-header.gif) #024b94;
-	background-repeat: no-repeat;
-	background-position: right 50%;
-    color:white;
-}
-
-.active-header:hover {
-    background: url(/images/active-header.gif) #024b94;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    /*background: url(/images/active-header.gif) #024b94;*/
+    background: #024b94;
     background-repeat: no-repeat;
     background-position: right 50%;
     color: white;
 }
+
+    .active-header:hover {
+        /*background: url(/images/active-header.gif) #024b94;*/
+        background: #024b94;
+        background-repeat: no-repeat;
+        background-position: right 50%;
+        color: white;
+    }
 
 .inactive-header {
-	background: url(/images/inactive-header.gif) #367fc3;
-	background-repeat: no-repeat;
-	background-position: right 50%; 
-	color: white;
-}
-
-.inactive-header:hover {
-    background: url(/images/active-header.gif) #024b94;
+    /*background: url(/images/inactive-header.gif) #367fc3;*/
+    background: #367fc3;
     background-repeat: no-repeat;
     background-position: right 50%;
     color: white;
 }
+
+    .inactive-header:hover {
+        /*background: url(/images/active-header.gif) #024b94;*/
+        background: #024b94;
+        background-repeat: no-repeat;
+        background-position: right 50%;
+        color: white;
+    }
 
 .accordion-content {
 	display: none;
