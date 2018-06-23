@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using System.Data; 
 
 namespace BioIntranet
 {
@@ -37,68 +32,63 @@ namespace BioIntranet
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            { 
-                CargarDepartamentos();
-            }
+            //if (!IsPostBack) CargarDepartamentos();
         }
 
-        private IEnumerable<AreaEntity> CargarAreas()
-        {
-            try
-            {
-                AreaEntity areaEntity = new AreaEntity();
-                return areaEntity.ObetenerAreas();
-            }
-            catch (Exception ex)
-            {
-                Session["error"] = ex;
-                return null;
-            }
-        } 
+        //private IEnumerable<AreaEntity> CargarAreas()
+        //{
+        //    try
+        //    {
+        //        AreaEntity areaEntity = new AreaEntity();
+        //       return areaEntity.ObetenerAreas();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Session["error"] = ex;
+        //        return null;
+        //    }
+        //}
 
-        private void CargarDepartamentos()
-        {
-            try
-            {
-                DepartamentoEntity departamentoEntity = new DepartamentoEntity();
+        //private void CargarDepartamentos()
+        //{
+        //    try
+        //    {
+        //        DepartamentoEntity departamentoEntity = new DepartamentoEntity();
 
-                IEnumerable<AreaEntity> listAreas = CargarAreas();//.Distinct(new AreaEntity().Id);
-                foreach (AreaEntity area in listAreas)
-                {
-                    foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(area.Id))
-                    {
-                        CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, area.Nombre);
-                    }
-                }
+        //        IEnumerable<AreaEntity> listAreas = CargarAreas();//.Distinct(new AreaEntity().Id);
+        //        foreach (AreaEntity area in listAreas)
+        //        {
+        //            foreach (DepartamentoEntity departamento in departamentoEntity.ObetenerDepartamentos(area.Id))
+        //            {
+        //                CrearListaDepartamentosPorArea(departamento.Id, departamento.Nombre, departamento.Descripcion, departamento.Responsable, area.Nombre);
+        //            }
+        //        }
 
 
-                //Pruebas -> NO BORRAR
-                //ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
-                //HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
+        //        //Pruebas -> NO BORRAR
+        //        //ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
+        //        //HtmlGenericControl h2Pruebas = (HtmlGenericControl)myPlaceHolder.FindControl("h2Pruebas");
 
-                //IEnumerable<AreaEntity> list1 = CargarAreas();
-                AreaEntity primerArea = CargarAreas().Where(a => a.Id == 1).ElementAt(0);
-                //h2Pruebas.InnerText = primerArea.Nombre;
+        //        //IEnumerable<AreaEntity> list1 = CargarAreas();
+        //        //AreaEntity primerArea = CargarAreas().Where(a => a.Id == 1).ElementAt(0);
+        //        //h2Pruebas.InnerText = primerArea.Nombre;
 
-                 
-            }
-            catch (Exception ex)
-            {
-                Session["error"] = ex;
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Session["error"] = ex;
            
-            }
-        }
+        //    }
+        //}
         
         private void CrearListaDepartamentosPorArea(Int32 id, string nombre, string descripcion, string responsable, string areaName)
         {
-            try
-            {   
+            try {   
                 ContentPlaceHolder myPlaceHolder = (ContentPlaceHolder)Master.FindControl("ContentSection");
                 HtmlControl divContent = (HtmlControl)myPlaceHolder.FindControl(areaName.Replace(" ", string.Empty) + "Content");
 
-                if(divContent != null) 
-                {
+                if(divContent != null) {
                     HtmlGenericControl pTituloDpto = new HtmlGenericControl("p");
                     pTituloDpto.Attributes.Add("class", "cat");
                     pTituloDpto.Attributes.Add("runat", "server");
@@ -117,8 +107,7 @@ namespace BioIntranet
                     divContent.Controls.Add(pTituloDpto);
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Session["error"] = ex;
             }
         }
